@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 180" fill="none">
+  <defs>
+    <linearGradient id="folha-escura" x1="0.15" y1="0.9" x2="0.9" y2="0.1">
+      <stop offset="0" stop-color="#213322" />
+      <stop offset="0.42" stop-color="#344d30" />
+      <stop offset="0.72" stop-color="#718753" />
+      <stop offset="1" stop-color="#b3c38b" />
+    </linearGradient>
+    <linearGradient id="folha-clara" x1="0.05" y1="0.85" x2="0.95" y2="0.12">
+      <stop offset="0" stop-color="#657d48" />
+      <stop offset="0.42" stop-color="#a5ba7c" />
+      <stop offset="0.78" stop-color="#d3ddb0" />
+      <stop offset="1" stop-color="#819960" />
+    </linearGradient>
+    <linearGradient id="talo" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#4c5033" />
+      <stop offset="0.55" stop-color="#788052" />
+      <stop offset="1" stop-color="#aab27a" />
+    </linearGradient>
+  </defs>
+  <path d="M8 174C41 145 82 98 132 7" stroke="url(#talo)" stroke-width="2.8" stroke-linecap="round" />
+  <path d="M27 157C13 151 5 137 4 119C21 122 33 138 35 154C32 156 29 157 27 157Z" fill="url(#folha-escura)" stroke="#35472d" stroke-width=".8" />
+  <path d="M32 151C38 133 53 122 70 120C68 139 53 151 32 155Z" fill="url(#folha-clara)" stroke="#52643b" stroke-width=".8" />
+  <path d="M49 130C31 124 21 109 22 91C40 94 53 110 57 127C54 129 51 130 49 130Z" fill="url(#folha-escura)" stroke="#35472d" stroke-width=".8" />
+  <path d="M56 123C62 104 77 92 96 91C94 111 78 123 56 127Z" fill="url(#folha-clara)" stroke="#52643b" stroke-width=".8" />
+  <path d="M74 101C57 95 47 80 50 61C68 66 79 82 81 99C78 101 76 102 74 101Z" fill="url(#folha-escura)" stroke="#35472d" stroke-width=".8" />
+  <path d="M81 94C88 75 103 64 122 64C119 84 103 96 81 98Z" fill="url(#folha-clara)" stroke="#52643b" stroke-width=".8" />
+  <path d="M100 68C85 60 79 46 84 28C101 35 110 51 107 67C104 68 102 69 100 68Z" fill="url(#folha-escura)" stroke="#35472d" stroke-width=".8" />
+  <path d="M105 63C112 44 125 32 138 32C135 51 122 63 105 67Z" fill="url(#folha-clara)" stroke="#52643b" stroke-width=".8" />
+  <path d="M119 39C107 31 103 19 108 4C122 10 129 24 125 39C123 40 121 40 119 39Z" fill="url(#folha-escura)" stroke="#35472d" stroke-width=".8" />
+  <g stroke="#d0d8ac" stroke-linecap="round" stroke-width=".85" opacity=".82">
+    <path d="M30 155C21 144 12 132 5 120M31 154C25 149 18 144 12 141" />
+    <path d="M34 151C47 139 58 129 69 121M39 147C46 145 53 140 58 135" />
+    <path d="M52 128C42 116 32 104 23 92M47 124C39 122 33 117 28 111" />
+    <path d="M58 123C70 111 83 101 95 93M64 118C71 116 78 111 84 106" />
+    <path d="M77 99C68 88 58 75 51 62M72 94C65 91 60 85 56 79" />
+    <path d="M84 94C96 82 109 72 121 65M91 88C99 86 106 81 112 76" />
+    <path d="M103 66C97 55 90 41 85 29M99 61C94 57 91 50 88 44" />
+    <path d="M108 63C119 51 129 42 137 34M115 56C122 53 128 48 132 43" />
+    <path d="M122 37C116 27 111 15 109 5M118 31C114 27 112 21 111 16" />
+  </g>
+</svg>
