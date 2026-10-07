@@ -4,6 +4,7 @@ import {
   Armchair,
   Building2,
   CalendarDays,
+  Camera,
   ChevronLeft,
   ChevronRight,
   CookingPot,
@@ -26,38 +27,117 @@ type ImagemEspaco = {
   src?: string
 }
 
-const imagensEspaco: ImagemEspaco[] = [
+const imagensGaleria: ImagemEspaco[] = [
   {
-    id: 'foto-salao-1',
-    alt: 'Foto real do salão',
+    id: 'casamento-corredor',
+    alt: 'Corredor decorado para cerimônia de casamento no Santana Eventos',
+    src: '/fotos/galeria/01-casamento-corredor.webp',
   },
   {
-    id: 'foto-salao-2',
-    alt: 'Foto real do salão',
+    id: 'casamento-cerimonia',
+    alt: 'Salão preparado para cerimônia de casamento',
+    src: '/fotos/galeria/02-casamento-cerimonia.webp',
   },
   {
-    id: 'foto-salao-3',
-    alt: 'Foto real do salão',
+    id: 'casamento-mesa-principal',
+    alt: 'Mesa principal decorada para casamento',
+    src: '/fotos/galeria/03-casamento-mesa-principal.webp',
   },
   {
-    id: 'foto-salao-4',
-    alt: 'Foto real do salão',
+    id: 'casamento-salao-montado',
+    alt: 'Salão montado com mesas e cadeiras para casamento',
+    src: '/fotos/galeria/04-casamento-salao-montado.webp',
+  },
+  {
+    id: 'casamento-decoracao',
+    alt: 'Decoração de casamento no Santana Eventos',
+    src: '/fotos/galeria/05-casamento-decoracao.webp',
+  },
+  {
+    id: 'casamento-flores',
+    alt: 'Detalhes florais de decoração de casamento',
+    src: '/fotos/galeria/06-casamento-flores.webp',
+  },
+  {
+    id: 'infantil-salao',
+    alt: 'Salão decorado para festa infantil',
+    src: '/fotos/galeria/07-infantil-salao-decorado.webp',
+  },
+  {
+    id: 'infantil-ampla',
+    alt: 'Vista ampla do espaço preparado para festa infantil',
+    src: '/fotos/galeria/08-infantil-visao-ampla.webp',
+  },
+  {
+    id: 'infantil-decoracao',
+    alt: 'Decoração temática de festa infantil',
+    src: '/fotos/galeria/09-infantil-decoracao.webp',
+  },
+  {
+    id: 'infantil-detalhe',
+    alt: 'Detalhes da mesa decorada para festa infantil',
+    src: '/fotos/galeria/10-infantil-detalhe-mesa.webp',
+  },
+  {
+    id: 'infantil-brinquedos',
+    alt: 'Área preparada com brinquedos para festa infantil',
+    src: '/fotos/galeria/11-infantil-area-brinquedos.webp',
+  },
+  {
+    id: 'quinze-anos-decoracao',
+    alt: 'Decoração de festa de 15 anos no Santana Eventos',
+    src: '/fotos/galeria/12-15-anos-decoracao.webp',
+  },
+  {
+    id: 'quinze-anos-ambiente',
+    alt: 'Ambiente preparado para festa de 15 anos',
+    src: '/fotos/galeria/13-15-anos-ambiente.webp',
+  },
+  {
+    id: 'quinze-anos-doces',
+    alt: 'Mesa de doces preparada para festa de 15 anos',
+    src: '/fotos/galeria/14-15-anos-doces.webp',
+  },
+  {
+    id: 'formatura-mesa',
+    alt: 'Mesa decorada para festa de formatura',
+    src: '/fotos/galeria/15-formatura-mesa.webp',
+  },
+  {
+    id: 'formatura-bolo',
+    alt: 'Bolo e decoração de festa de formatura',
+    src: '/fotos/galeria/16-formatura-bolo.webp',
+  },
+  {
+    id: 'formatura-decoracao',
+    alt: 'Decoração temática de festa de formatura',
+    src: '/fotos/galeria/17-formatura-decoracao.webp',
+  },
+  {
+    id: 'formatura-salao',
+    alt: 'Salão Santana Eventos preparado para uma festa de formatura',
+    src: '/fotos/galeria/18-formatura-salao.webp',
   },
 ]
 
+const imagensHero = imagensGaleria
+
 const linkWhatsApp = `https://wa.me/5577981198079?text=${encodeURIComponent('Olá! Gostaria de consultar a disponibilidade do Santana Eventos para realizar um evento.')}`
+const linkInstagram = 'https://www.instagram.com/santanaeventoss/'
 const endereco = 'Rua Ulisses do Prado Nogueira, 927 A, Bairro Morada dos Pássaros – Felícia'
 const linkEndereco = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(endereco)}`
-const avancarIndice = (indice: number, direcao: number) =>
-  (indice + direcao + imagensEspaco.length) % imagensEspaco.length
+const avancarIndice = (indice: number, direcao: number, total: number) =>
+  (indice + direcao + total) % total
 
 const itensInclusos = [
   { icone: Building2, titulo: 'Salão de eventos', detalhe: 'Espaço amplo e versátil' },
-  { icone: Table2, titulo: 'Mesas', detalhe: 'Disponíveis para os eventos' },
-  { icone: Armchair, titulo: 'Cadeiras', detalhe: 'Disponíveis para os convidados' },
+  { icone: Table2, titulo: 'Mesas', detalhe: '12 mesas disponíveis' },
+  { icone: Armchair, titulo: 'Cadeiras', detalhe: '100 cadeiras disponíveis' },
+  { icone: Table2, titulo: 'Tampões', detalhe: '12 tampões disponíveis' },
   { icone: UsersRound, titulo: 'Banheiros', detalhe: 'Masculino e feminino' },
-  { icone: CookingPot, titulo: 'Cozinha de apoio', detalhe: 'Disponível para apoio durante o evento' },
-  { icone: Wind, titulo: 'Climatização', detalhe: 'Ambiente ventilado e confortável' },
+  { icone: CookingPot, titulo: 'Cozinha ampla', detalhe: 'Freezer, fogão e tacho para fritura' },
+  { icone: Wind, titulo: 'Ambiente arejado', detalhe: 'Muitas janelas com telas de proteção' },
+  { icone: Camera, titulo: 'Segurança', detalhe: 'Câmeras de segurança' },
 ]
 
 function RamoOliveira() {
@@ -66,7 +146,6 @@ function RamoOliveira() {
 
 function App() {
   const [fotoHero, setFotoHero] = useState(0)
-  const [fotoGaleria, setFotoGaleria] = useState(0)
   const [fotoLightbox, setFotoLightbox] = useState<number | null>(null)
   const [menuAberto, setMenuAberto] = useState(false)
   const [heroHover, setHeroHover] = useState(false)
@@ -75,16 +154,8 @@ function App() {
   const [reducaoMovimento, setReducaoMovimento] = useState(() =>
     typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   )
-  const [galeriaVisivel, setGaleriaVisivel] = useState(() => {
-    if (typeof window === 'undefined') return 4
-    if (window.innerWidth <= 560) return 1
-    if (window.innerWidth <= 900) return 2
-    if (window.innerWidth <= 1100) return 3
-    return 4
-  })
   const heroPauseTimeout = useRef<number | null>(null)
   const heroTouchStart = useRef<number | null>(null)
-  const galleryTouchStart = useRef<number | null>(null)
   const fecharLightboxRef = useRef<HTMLButtonElement>(null)
   const botaoMenuRef = useRef<HTMLButtonElement>(null)
 
@@ -97,16 +168,11 @@ function App() {
     }, 4500)
   }
 
-  const fotosVisiveis = Array.from({ length: galeriaVisivel }, (_, posicao) => {
-    const indice = (fotoGaleria + posicao) % imagensEspaco.length
-    return { ...imagensEspaco[indice], indice }
-  })
-
   useEffect(() => {
     if (heroHover || heroFoco || heroInteracao || reducaoMovimento) return
 
     const intervalo = window.setInterval(() => {
-      setFotoHero((atual) => avancarIndice(atual, 1))
+      setFotoHero((atual) => avancarIndice(atual, 1, imagensHero.length))
     }, 5000)
 
     return () => window.clearInterval(intervalo)
@@ -120,16 +186,6 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const atualizarQuantidadeFotos = () => {
-      const largura = window.innerWidth
-      setGaleriaVisivel(largura <= 560 ? 1 : largura <= 900 ? 2 : largura <= 1100 ? 3 : 4)
-    }
-
-    window.addEventListener('resize', atualizarQuantidadeFotos)
-    return () => window.removeEventListener('resize', atualizarQuantidadeFotos)
-  }, [])
-
-  useEffect(() => {
     if (fotoLightbox === null) return
 
     const focoAnterior = document.activeElement as HTMLElement | null
@@ -139,8 +195,8 @@ function App() {
 
     const tratarTecla = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setFotoLightbox(null)
-      if (event.key === 'ArrowLeft') setFotoLightbox((atual) => atual === null ? null : avancarIndice(atual, -1))
-      if (event.key === 'ArrowRight') setFotoLightbox((atual) => atual === null ? null : avancarIndice(atual, 1))
+      if (event.key === 'ArrowLeft') setFotoLightbox((atual) => atual === null ? null : avancarIndice(atual, -1, imagensGaleria.length))
+      if (event.key === 'ArrowRight') setFotoLightbox((atual) => atual === null ? null : avancarIndice(atual, 1, imagensGaleria.length))
       if (event.key === 'Tab') {
         const botoes = document.querySelectorAll<HTMLButtonElement>('.lightbox button:not([disabled])')
         const primeiroBotao = botoes.item(0)
@@ -173,18 +229,9 @@ function App() {
     const distancia = xFinal - heroTouchStart.current
     if (Math.abs(distancia) > 45) {
       pausarHero()
-      setFotoHero((atual) => avancarIndice(atual, distancia < 0 ? 1 : -1))
+      setFotoHero((atual) => avancarIndice(atual, distancia < 0 ? 1 : -1, imagensHero.length))
     }
     heroTouchStart.current = null
-  }
-
-  const tratarFimSwipeGaleria = (xFinal: number) => {
-    if (galleryTouchStart.current === null) return
-    const distancia = xFinal - galleryTouchStart.current
-    if (Math.abs(distancia) > 45) {
-      setFotoGaleria((atual) => avancarIndice(atual, distancia < 0 ? 1 : -1))
-    }
-    galleryTouchStart.current = null
   }
 
   const navegarMenu = () => setMenuAberto(false)
@@ -229,7 +276,6 @@ function App() {
         <nav id="menu-principal" className={menuAberto ? 'menu-principal aberto' : 'menu-principal'} aria-label="Navegação principal">
           <a href="#inicio" onClick={navegarMenu}>Início</a>
           <a href="#espaco" onClick={navegarMenu}>O Espaço</a>
-          <a href="#galeria" onClick={navegarMenu}>Galeria</a>
           <a href="#como-funciona" onClick={navegarMenu}>Como funciona</a>
           <a href="#contato" onClick={navegarMenu}>Contato</a>
         </nav>
@@ -254,7 +300,7 @@ function App() {
             className="hero-slider"
             role="region"
             aria-roledescription="carrossel"
-            aria-label="Espaços reservados para fotos reais do salão"
+            aria-label="Fotos reais de eventos realizados no Santana Eventos"
             onMouseEnter={() => setHeroHover(true)}
             onMouseLeave={() => setHeroHover(false)}
             onFocusCapture={() => setHeroFoco(true)}
@@ -269,13 +315,13 @@ function App() {
             onTouchCancel={() => { heroTouchStart.current = null }}
           >
             <div
-              key={imagensEspaco[fotoHero].id}
+              key={imagensHero[fotoHero].id}
               className={`foto-slider variante-${fotoHero}`}
               role="img"
-              aria-label={imagensEspaco[fotoHero].alt}
+              aria-label={imagensHero[fotoHero].alt}
             >
-              {imagensEspaco[fotoHero].src ? (
-                <img className="foto-real" src={imagensEspaco[fotoHero].src} alt={imagensEspaco[fotoHero].alt} fetchPriority="high" decoding="async" />
+              {imagensHero[fotoHero].src ? (
+                <img className="foto-real" src={imagensHero[fotoHero].src} alt={imagensHero[fotoHero].alt} fetchPriority="high" decoding="async" />
               ) : (
                 <>
                   <Building2 aria-hidden="true" />
@@ -287,7 +333,7 @@ function App() {
               className="controle-hero controle-hero-anterior"
               type="button"
               aria-label="Ver foto anterior"
-              onClick={() => { pausarHero(); setFotoHero((atual) => avancarIndice(atual, -1)) }}
+              onClick={() => { pausarHero(); setFotoHero((atual) => avancarIndice(atual, -1, imagensHero.length)) }}
             >
               <ChevronLeft aria-hidden="true" />
             </button>
@@ -295,12 +341,12 @@ function App() {
               className="controle-hero controle-hero-proximo"
               type="button"
               aria-label="Ver próxima foto"
-              onClick={() => { pausarHero(); setFotoHero((atual) => avancarIndice(atual, 1)) }}
+              onClick={() => { pausarHero(); setFotoHero((atual) => avancarIndice(atual, 1, imagensHero.length)) }}
             >
               <ChevronRight aria-hidden="true" />
             </button>
             <div className="pontos-hero" role="group" aria-label="Selecionar foto do destaque">
-              {imagensEspaco.map((imagem, indice) => (
+              {imagensHero.map((imagem, indice) => (
                 <button
                   key={imagem.id}
                   type="button"
@@ -366,65 +412,6 @@ function App() {
                 <p>{detalhe}</p>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section id="galeria" className="secao-galeria">
-          <div className="cabecalho-secao cabecalho-galeria">
-            <div className="titulo-secao">
-              <h2>Veja o espaço</h2>
-              <p>Fotos reais do espaço estarão disponíveis em breve.</p>
-            </div>
-            <div className="controles-galeria">
-              <button type="button" aria-label="Ver fotos anteriores" onClick={() => setFotoGaleria((atual) => avancarIndice(atual, -1))}>
-                <ChevronLeft aria-hidden="true" />
-              </button>
-              <button type="button" aria-label="Ver próximas fotos" onClick={() => setFotoGaleria((atual) => avancarIndice(atual, 1))}>
-                <ChevronRight aria-hidden="true" />
-              </button>
-            </div>
-          </div>
-          <div
-            className="galeria-slider"
-            role="region"
-            aria-roledescription="carrossel"
-            aria-label="Galeria de fotos do espaço"
-            onTouchStart={(event) => { galleryTouchStart.current = event.changedTouches[0].clientX }}
-            onTouchEnd={(event) => tratarFimSwipeGaleria(event.changedTouches[0].clientX)}
-            onTouchCancel={() => { galleryTouchStart.current = null }}
-          >
-            <div className="fotos-galeria">
-              {fotosVisiveis.map((imagem) => (
-                <button
-                  className={`foto-galeria variante-${imagem.indice}`}
-                  type="button"
-                  aria-label={`Ampliar foto ${imagem.indice + 1} do espaço`}
-                  key={imagem.id}
-                  onClick={() => setFotoLightbox(imagem.indice)}
-                >
-                  {imagem.src ? (
-                    <img className="foto-real" src={imagem.src} alt="" loading="lazy" decoding="async" />
-                  ) : (
-                    <>
-                      <Building2 aria-hidden="true" />
-                      <span>Foto real do salão em breve</span>
-                    </>
-                  )}
-                </button>
-              ))}
-            </div>
-            <div className="pontos-galeria" role="group" aria-label="Selecionar posição da galeria">
-              {imagensEspaco.map((imagem, indice) => (
-                <button
-                  key={imagem.id}
-                  type="button"
-                  aria-label={`Mostrar carrossel a partir da foto ${indice + 1}`}
-                  aria-pressed={fotoGaleria === indice}
-                  className={fotoGaleria === indice ? 'ponto ativo' : 'ponto'}
-                  onClick={() => setFotoGaleria(indice)}
-                />
-              ))}
-            </div>
           </div>
         </section>
 
@@ -514,12 +501,32 @@ function App() {
             <p>Estamos à disposição para tirar suas dúvidas e agendar uma visita.</p>
           </div>
           <div className="grade-contato">
-            <div className="contato-item contato-whatsapp">
+            <div className="contato-item contato-whatsapp contato-redes">
               <MessageCircle aria-hidden="true" />
               <div>
-                <h3>WhatsApp</h3>
+                <h3>WhatsApp e Instagram</h3>
+
+                <span className="contato-canal">WhatsApp</span>
                 <a className="contato-numero" href={linkWhatsApp} target="_blank" rel="noreferrer">(77) 9 8119-8079</a>
                 <a className="contato-acao" href={linkWhatsApp} target="_blank" rel="noreferrer">Conversar <ArrowRight aria-hidden="true" /></a>
+
+                <span className="contato-canal contato-canal-secundario">Instagram</span>
+                <a
+                  className="contato-numero contato-numero-secundario"
+                  href={linkInstagram}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @santanaeventoss
+                </a>
+                <a
+                  className="contato-acao"
+                  href={linkInstagram}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ver Instagram <ArrowRight aria-hidden="true" />
+                </a>
               </div>
             </div>
             <div className="contato-item">
@@ -570,12 +577,12 @@ function App() {
           <button className="lightbox-fechar" type="button" aria-label="Fechar foto ampliada" ref={fecharLightboxRef} onClick={() => setFotoLightbox(null)}>
             <X aria-hidden="true" />
           </button>
-          <button className="lightbox-controle lightbox-anterior" type="button" aria-label="Foto anterior" onClick={() => setFotoLightbox((atual) => atual === null ? null : avancarIndice(atual, -1))}>
+          <button className="lightbox-controle lightbox-anterior" type="button" aria-label="Foto anterior" onClick={() => setFotoLightbox((atual) => atual === null ? null : avancarIndice(atual, -1, imagensGaleria.length))}>
             <ChevronLeft aria-hidden="true" />
           </button>
-          <div className={`lightbox-foto variante-${fotoLightbox}`} role="img" aria-label={imagensEspaco[fotoLightbox].alt}>
-            {imagensEspaco[fotoLightbox].src ? (
-              <img className="foto-real" src={imagensEspaco[fotoLightbox].src} alt={imagensEspaco[fotoLightbox].alt} decoding="async" />
+          <div className={`lightbox-foto variante-${fotoLightbox}`} role="img" aria-label={imagensGaleria[fotoLightbox].alt}>
+            {imagensGaleria[fotoLightbox].src ? (
+              <img className="foto-real" src={imagensGaleria[fotoLightbox].src} alt={imagensGaleria[fotoLightbox].alt} decoding="async" />
             ) : (
               <>
                 <Building2 aria-hidden="true" />
@@ -583,10 +590,10 @@ function App() {
               </>
             )}
           </div>
-          <button className="lightbox-controle lightbox-proxima" type="button" aria-label="Próxima foto" onClick={() => setFotoLightbox((atual) => atual === null ? null : avancarIndice(atual, 1))}>
+          <button className="lightbox-controle lightbox-proxima" type="button" aria-label="Próxima foto" onClick={() => setFotoLightbox((atual) => atual === null ? null : avancarIndice(atual, 1, imagensGaleria.length))}>
             <ChevronRight aria-hidden="true" />
           </button>
-          <span className="lightbox-contador">{fotoLightbox + 1} / {imagensEspaco.length}</span>
+          <span className="lightbox-contador">{fotoLightbox + 1} / {imagensGaleria.length}</span>
         </div>
       )}
 
@@ -598,7 +605,6 @@ function App() {
         <nav className="menu-rodape" aria-label="Navegação do rodapé">
           <a href="#inicio">Início</a>
           <a href="#espaco">O Espaço</a>
-          <a href="#galeria">Galeria</a>
           <a href="#como-funciona">Como funciona</a>
           <a href="#contato">Contato</a>
         </nav>

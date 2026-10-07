@@ -154,7 +154,7 @@ body {
 }
 
 .hero {
-  min-height: 410px;
+  min-height: 520px;
   display: grid;
   grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
   background: #f8f6f2;
@@ -239,7 +239,7 @@ body {
 .hero-slider {
   position: relative;
   min-width: 0;
-  min-height: 410px;
+  min-height: 520px;
   overflow: hidden;
   background: #e8e3da;
   touch-action: pan-y;
@@ -268,7 +268,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .foto-slider {
@@ -496,7 +496,7 @@ body {
 
 .itens-inclusos {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .item-incluso {
@@ -514,6 +514,17 @@ body {
 
 .item-incluso + .item-incluso {
   border-left: 1px solid #e8e1d8;
+}
+
+@media (min-width: 901px) {
+  .item-incluso:nth-child(4n + 1) {
+    border-left: 0;
+  }
+
+  .item-incluso:nth-child(n + 5) {
+    border-top: 1px solid #e8e1d8;
+    padding-top: 15px;
+  }
 }
 
 .icone-incluso {
@@ -928,7 +939,7 @@ body {
 
 .grade-contato {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1.5fr 1fr;
+  grid-template-columns: 1.35fr 0.95fr 1.45fr 0.9fr;
   align-items: stretch;
 }
 
@@ -1028,6 +1039,27 @@ body {
 .contato-item .contato-acao svg {
   width: 13px;
   height: 13px;
+}
+
+.contato-redes > div {
+  gap: 0;
+}
+
+.contato-canal {
+  margin: 2px 0 1px;
+  color: #5f5144;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.contato-canal-secundario {
+  margin-top: 10px;
+}
+
+.contato-numero-secundario {
+  min-height: 32px;
 }
 
 .site footer.rodape {
@@ -1639,4 +1671,97 @@ body {
 .site summary:focus-visible {
   outline: 3px solid #8b6242;
   outline-offset: 3px;
+}
+
+
+/* Slider principal com todas as fotos reais */
+.hero-slider {
+  background: #f1ece3;
+}
+
+.hero-slider .foto-real {
+  object-fit: contain;
+  object-position: center center;
+  background: #f1ece3;
+}
+
+@media (min-width: 901px) {
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero-slider {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-slider {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-slider {
+    min-height: 430px;
+  }
+}
+
+
+/* Ajuste final do slider com fotos completas */
+.hero {
+  min-height: 560px;
+}
+
+.hero-slider {
+  min-height: 560px;
+  background: #eee8dc;
+}
+
+.hero-slider .foto-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee8dc;
+}
+
+.hero-slider .foto-real {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  background: #eee8dc;
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .hero-slider {
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-slider {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-slider {
+    min-height: 460px;
+  }
+
+  .hero-slider .foto-real {
+    object-fit: contain;
+    object-position: center center;
+  }
 }
