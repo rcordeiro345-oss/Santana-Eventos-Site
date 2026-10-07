@@ -104,11 +104,6 @@ const imagensGaleria: ImagemEspaco[] = [
     src: '/fotos/galeria/15-formatura-mesa.webp',
   },
   {
-    id: 'formatura-bolo',
-    alt: 'Bolo e decoração de festa de formatura',
-    src: '/fotos/galeria/16-formatura-bolo.webp',
-  },
-  {
     id: 'formatura-decoracao',
     alt: 'Decoração temática de festa de formatura',
     src: '/fotos/galeria/17-formatura-decoracao.webp',
