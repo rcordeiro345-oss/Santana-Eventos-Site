@@ -12,7 +12,6 @@ import {
   House,
   Menu,
   MapPin,
-  MessageCircle,
   Phone,
   Table2,
   UsersRound,
@@ -137,6 +136,44 @@ const itensInclusos = [
 
 function RamoOliveira() {
   return <img className="ramo-oliveira" src="/folha-oliveira.svg" alt="" aria-hidden="true" />
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 32 32" aria-hidden="true" className="icone-whatsapp-real">
+      <path
+        fill="currentColor"
+        d="M16 3C8.82 3 3 8.82 3 16c0 2.32.61 4.49 1.68 6.37L3 29l6.82-1.61A12.92 12.92 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3Zm0 23.63c-1.99 0-3.84-.55-5.43-1.5l-.39-.23-4.05.96 1.02-3.95-.25-.4A10.58 10.58 0 0 1 5.37 16C5.37 10.13 10.13 5.37 16 5.37S26.63 10.13 26.63 16 21.87 26.63 16 26.63Zm5.83-7.94c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.7-.97-2.33-.25-.61-.51-.53-.71-.54h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64s1.14 3.07 1.29 3.28c.16.21 2.23 3.41 5.4 4.78.75.33 1.34.52 1.8.66.76.24 1.45.21 1.99.13.61-.09 1.89-.77 2.15-1.51.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"
+      />
+    </svg>
+  )
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="icone-instagram-real">
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"
+        ry="5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="4.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <circle cx="17.4" cy="6.7" r="1.2" fill="currentColor" />
+    </svg>
+  )
 }
 
 function App() {
@@ -275,10 +312,29 @@ function App() {
           <a href="#contato" onClick={navegarMenu}>Contato</a>
         </nav>
 
-        <a className="botao-whatsapp" href={linkWhatsApp} target="_blank" rel="noreferrer" aria-label="Falar conosco pelo WhatsApp">
-          <MessageCircle aria-hidden="true" />
-          <span>Falar conosco</span>
-        </a>
+        <div className="acoes-topo">
+          <a
+            className="botao-whatsapp"
+            href={linkWhatsApp}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Falar conosco pelo WhatsApp"
+          >
+            <WhatsAppIcon />
+            <span>Falar conosco</span>
+          </a>
+
+          <a
+            className="botao-instagram-topo"
+            href={linkInstagram}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir Instagram do Santana Eventos"
+            title="Instagram"
+          >
+            <InstagramIcon />
+          </a>
+        </div>
       </header>
 
       <main>
@@ -418,7 +474,7 @@ function App() {
           <ul className="tipos-momentos">
             <li>Festas e eventos</li>
             <li>Locação somente do espaço</li>
-            <li>Capacidade para até 150 pessoas</li>
+            <li><strong>Capacidade para até 150 pessoas</strong></li>
           </ul>
         </section>
 
@@ -497,7 +553,7 @@ function App() {
           </div>
           <div className="grade-contato">
             <div className="contato-item contato-whatsapp contato-redes">
-              <MessageCircle aria-hidden="true" />
+              <WhatsAppIcon />
               <div>
                 <h3>WhatsApp e Instagram</h3>
 
