@@ -414,7 +414,7 @@ function App() {
         <section id="informacoes" className="faixa-informacoes" aria-label="Informações do espaço">
           <div className="item-informacao">
             <UsersRound aria-hidden="true" />
-            <span><strong>Capacidade:</strong><br />até 150 pessoas</span>
+            <span><strong>Capacidade:<br />até 150 pessoas</strong></span>
           </div>
           <div className="item-informacao">
             <MapPin aria-hidden="true" />
